@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ #pour avoir le meme randow pour doctor et appointment car un doctor peut pas donner 
+#un rdv dans un autre ville si on est logique
+require 'faker'
+
+10.times{City.create!(name:Faker::LeagueOfLegends.location)}
+10.times{Speciality.create!(name:Faker::LeagueOfLegends.summoner_spell)}
+10.times{Doctor.create!(first_name:Faker::LeagueOfLegends.champion,last_name:Faker::GameOfThrones.house,city_id:rand(1..10))}
+10.times{Patient.create!(first_name:Faker::Fallout.character,last_name:Faker::ElderScrolls.race,city_id:rand(1..10))}
+10.times{Appointment.create!(doctor_id:rand(1..10),patient_id:rand(1..10), city_id:rand(1..10))}
