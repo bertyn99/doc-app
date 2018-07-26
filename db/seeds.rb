@@ -11,6 +11,6 @@ require 'faker'
 
 10.times{City.create!(name:Faker::LeagueOfLegends.location)}
 10.times{Speciality.create!(name:Faker::LeagueOfLegends.summoner_spell,doctor_id:rand(1..10))}
-10.times{Doctor.create!(first_name:Faker::LeagueOfLegends.champion,last_name:Faker::GameOfThrones.house,postal_code:rand(1..95),city_id:rand(1..10))}
+10.times{Doctor.create!(first_name:Faker::LeagueOfLegends.champion,last_name:Faker::GameOfThrones.house,postal_code:rand(1..95),city_id:rand(1..10),speciality_id:rand(1..10))}
 10.times{Patient.create!(first_name:Faker::Fallout.character,last_name:Faker::ElderScrolls.race,city_id:rand(1..10))}
 10.times{Appointment.create!(doctor_id:rand(1..10),patient_id:rand(1..10), city_id:rand(1..10))}

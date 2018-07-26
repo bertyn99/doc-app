@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 2018_07_26_153721) do
     t.string "last_name"
     t.integer "postal_code"
     t.integer "city_id"
+    t.integer "speciality_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_doctors_on_city_id"
+    t.index ["speciality_id"], name: "index_doctors_on_speciality_id"
   end
 
   create_table "patients", force: :cascade do |t|
